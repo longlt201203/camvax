@@ -1,3 +1,3 @@
-import { AnimatedCamvaxFrame } from "../lib";
+import { AnimatedCamvax } from "../lib/animated";
 
-export function pre(acf: AnimatedCamvaxFrame) {}
+export function pre(camvax: AnimatedCamvax) {}

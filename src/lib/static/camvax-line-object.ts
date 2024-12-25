@@ -1,6 +1,6 @@
 import { Camvax } from "./camvax";
 import { CamvaxObject } from "./camvax-object";
-import { Coordinate } from "./oxy";
+import { Coordinate } from "../oxy";
 
 export class CamvaxLineObject extends CamvaxObject {
   constructor(id: string, private readonly path: Coordinate[]) {

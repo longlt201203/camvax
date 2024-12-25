@@ -1,3 +1,7 @@
-import { AnimatedCamvaxFrame } from "../lib";
+import { AnimatedCamvax } from "../lib/animated";
+import { animatedLine, animatedLine2 } from "../objects";
 
-export function post(acf: AnimatedCamvaxFrame) {}
+export function post(camvax: AnimatedCamvax) {
+  animatedLine.nextFrame();
+  animatedLine2.nextFrame();
+}

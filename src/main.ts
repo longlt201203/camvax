@@ -1,25 +1,24 @@
 import "./style.css";
-import { Camvax, AnimatedCamvaxFrame } from "./lib";
 import { post, pre } from "./app";
-import camvaxObjects from "./objects";
+import { AnimatedCamvax } from "./lib/animated";
+import { Camvax } from "./lib/static";
+import { animatedLine, animatedLine2 } from "./objects";
 
 async function initCamvax(camvax: Camvax) {
-  for (const obj of camvaxObjects) {
-    await camvax.putObject(obj);
-  }
+  camvax.putObject(animatedLine);
+  camvax.putObject(animatedLine2);
 }
 
 async function main() {
   const canvas = document.getElementById("myCanvas") as HTMLCanvasElement;
   const ctx = canvas.getContext("2d")!;
-  const camvax = new Camvax(ctx);
-  await initCamvax(camvax);
-  const acf = new AnimatedCamvaxFrame(camvax, {
-    fps: 4,
+  const animatedCamvax = new AnimatedCamvax(ctx, {
+    fps: 240,
     pre: pre,
     post: post,
   });
-  acf.start();
+  await initCamvax(animatedCamvax);
+  animatedCamvax.draw();
 }
 
 main();

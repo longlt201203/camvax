@@ -1,4 +1,4 @@
-import { Camvax } from "../camvax";
+import { Camvax } from "../static";
 
 export interface AnimatedCamvaxSettings {
   fps: number;
